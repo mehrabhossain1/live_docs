@@ -27,7 +27,7 @@ const Comments = () => {
       <Composer className="comment-composer" />
 
       {threads.map((thread) => (
-        <ThreadWrapper keys={thread.id} thread={thread} />
+        <ThreadWrapper key={thread.id} thread={thread} />
       ))}
     </div>
   );
