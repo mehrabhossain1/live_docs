@@ -1,14 +1,12 @@
-import * as Sentry from "@sentry/nextjs";
+// Temporarily disabled to fix Vercel edge runtime middleware issues
+// Uncomment this file once the middleware is working
 
-export async function register() {
-    if (process.env.NEXT_RUNTIME === "nodejs") {
-        await import("./sentry.server.config");
-    }
+// import * as Sentry from "@sentry/nextjs";
 
-    // Temporarily disable edge runtime Sentry to avoid middleware conflicts
-    // if (process.env.NEXT_RUNTIME === 'edge') {
-    //   await import('./sentry.edge.config');
-    // }
-}
+// export async function register() {
+//     if (process.env.NEXT_RUNTIME === "nodejs") {
+//         await import("./sentry.server.config");
+//     }
+// }
 
-export const onRequestError = Sentry.captureRequestError;
+// export const onRequestError = Sentry.captureRequestError;
